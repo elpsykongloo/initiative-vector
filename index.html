@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Turn-Taking Style Transfer · Examples</title>
+<meta name="description" content="Audio examples for Reference-Guided Turn-Taking Style Transfer for Full-Duplex Spoken Language Models: one residual-stream direction, read and shifted, calibrated per person from a five-minute recording.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,700;1,8..60,400;1,8..60,600&family=Noto+Sans+SC:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect x=%221%22 y=%229%22 width=%223%22 height=%226%22 fill=%22%23D6B5FF%22/%3E%3Crect x=%226%22 y=%225%22 width=%223%22 height=%2210%22 fill=%22%23D6B5FF%22/%3E%3Crect x=%2211%22 y=%221%22 width=%223%22 height=%2214%22 fill=%22%23D6B5FF%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="rings" aria-hidden="true"></div>
+  <span class="glow lav" aria-hidden="true"></span><span class="glow red" aria-hidden="true"></span>
+  <div class="wrap hero-in">
+    <div class="badges"><span class="badge">Audio examples</span><span class="venue">Paper · arXiv link coming soon</span></div>
+    <h1>Reference-Guided <em>Turn-Taking Style Transfer</em> for Full-Duplex Spoken Language Models</h1>
+    <p class="claim">Every set of full-duplex weights speaks with one turn-taking personality. We turn it into <em>a knob you can set per person</em>.</p>
+    <p class="claim-sub">Same model, same conversation, no training and no retraining. A five-minute recording of a speaker is enough to move the model's turn-taking toward that speaker.</p>
+    <nav class="links">
+      <a class="btn" href="#transfer">Listen ↓</a>
+      <a class="btn ghost" href="#cite">BibTeX</a>
+      <a class="btn" href="#" aria-disabled="true" title="arXiv link will be added at release">arXiv · coming soon</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="secnav" aria-label="Sections">
+  <div class="wrap">
+    <a href="#transfer">Style transfer</a>
+    <a href="#sweep">Dose sweep</a>
+    <a href="#random">Random directions</a>
+    <a href="#readout">Readout</a>
+    <a href="#cite">Citation</a>
+  </div>
+</nav>
+
+<div class="wrap intro">
+  <figure class="fig1">
+    <div class="fig1-art">
+<svg class="f1" viewBox="0 0 560 584" role="img" aria-label="Figure 1. (a) The initiative vector u is the difference between the mean layer-30 residual over silent frames followed by a model onset within 800 ms (mu plus) and over silent frames followed by continued silence (mu minus). (b) The projection h dot u rises before an onset; adding alpha s u to the residual shifts how much the model speaks.">
+<defs><marker id="f1-ah-lav" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah-lav"/></marker><marker id="f1-ah-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah-ink"/></marker><marker id="f1-ah-u" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.5 L10,5 L0,9.5 L2.2,5 z" class="ah-lav"/></marker></defs>
+<text x="0" y="16" class="key">a</text>
+<text x="17" y="16" class="head">Extract from the model's own conversations</text>
+<text x="0" y="52" class="lab">User</text>
+<text x="0" y="78" class="lab">Model</text>
+<text x="0" y="104" class="lab">80-ms frames</text>
+<rect x="138.4" y="46.8" width="2" height="2.4" rx="1" class="wv-user"/>
+<rect x="141.6" y="45.6" width="2" height="4.7" rx="1" class="wv-user"/>
+<rect x="144.8" y="45" width="2" height="6" rx="1" class="wv-user"/>
+<rect x="148" y="45.1" width="2" height="5.8" rx="1" class="wv-user"/>
+<rect x="151.2" y="44.6" width="2" height="6.8" rx="1" class="wv-user"/>
+<rect x="154.4" y="44.2" width="2" height="7.5" rx="1" class="wv-user"/>
+<rect x="157.6" y="46.1" width="2" height="3.9" rx="1" class="wv-user"/>
+<rect x="160.8" y="43.3" width="2" height="9.4" rx="1" class="wv-user"/>
+<rect x="164" y="42.9" width="2" height="10.2" rx="1" class="wv-user"/>
+<rect x="167.2" y="43.8" width="2" height="8.5" rx="1" class="wv-user"/>
+<rect x="170.4" y="41.2" width="2" height="13.5" rx="1" class="wv-user"/>
+<rect x="173.6" y="43.8" width="2" height="8.3" rx="1" class="wv-user"/>
+<rect x="176.8" y="43.3" width="2" height="9.4" rx="1" class="wv-user"/>
+<rect x="180" y="44.3" width="2" height="7.4" rx="1" class="wv-user"/>
+<rect x="183.2" y="40.1" width="2" height="15.9" rx="1" class="wv-user"/>
+<rect x="186.4" y="41.6" width="2" height="12.7" rx="1" class="wv-user"/>
+<rect x="189.6" y="40.9" width="2" height="14.3" rx="1" class="wv-user"/>
+<rect x="192.8" y="41.1" width="2" height="13.9" rx="1" class="wv-user"/>
+<rect x="196" y="45.5" width="2" height="5" rx="1" class="wv-user"/>
+<rect x="199.2" y="42.6" width="2" height="10.8" rx="1" class="wv-user"/>
+<rect x="202.4" y="41.3" width="2" height="13.3" rx="1" class="wv-user"/>
+<rect x="205.6" y="45" width="2" height="6.1" rx="1" class="wv-user"/>
+<rect x="208.8" y="42.8" width="2" height="10.3" rx="1" class="wv-user"/>
+<rect x="212" y="45.7" width="2" height="4.6" rx="1" class="wv-user"/>
+<rect x="215.2" y="43.2" width="2" height="9.5" rx="1" class="wv-user"/>
+<rect x="218.4" y="46.1" width="2" height="3.7" rx="1" class="wv-user"/>
+<rect x="221.6" y="46" width="2" height="3.9" rx="1" class="wv-user"/>
+<rect x="224.8" y="46.1" width="2" height="3.7" rx="1" class="wv-user"/>
+<rect x="228" y="46.8" width="2" height="2.4" rx="1" class="wv-user"/>
+<rect x="330.4" y="46.7" width="2" height="2.7" rx="1" class="wv-user"/>
+<rect x="333.6" y="46.8" width="2" height="2.5" rx="1" class="wv-user"/>
+<rect x="336.8" y="45" width="2" height="6.1" rx="1" class="wv-user"/>
+<rect x="340" y="46.2" width="2" height="3.6" rx="1" class="wv-user"/>
+<rect x="343.2" y="43.2" width="2" height="9.5" rx="1" class="wv-user"/>
+<rect x="346.4" y="45.6" width="2" height="4.8" rx="1" class="wv-user"/>
+<rect x="349.6" y="44.7" width="2" height="6.7" rx="1" class="wv-user"/>
+<rect x="352.8" y="43.4" width="2" height="9.2" rx="1" class="wv-user"/>
+<rect x="356" y="44.1" width="2" height="7.8" rx="1" class="wv-user"/>
+<rect x="359.2" y="43.7" width="2" height="8.5" rx="1" class="wv-user"/>
+<rect x="362.4" y="42.7" width="2" height="10.6" rx="1" class="wv-user"/>
+<rect x="365.6" y="45.1" width="2" height="5.9" rx="1" class="wv-user"/>
+<rect x="368.8" y="42.1" width="2" height="11.8" rx="1" class="wv-user"/>
+<rect x="372" y="40.2" width="2" height="15.5" rx="1" class="wv-user"/>
+<rect x="375.2" y="44.2" width="2" height="7.6" rx="1" class="wv-user"/>
+<rect x="378.4" y="44.1" width="2" height="7.7" rx="1" class="wv-user"/>
+<rect x="381.6" y="41.3" width="2" height="13.4" rx="1" class="wv-user"/>
+<rect x="384.8" y="41" width="2" height="13.9" rx="1" class="wv-user"/>
+<rect x="388" y="42.4" width="2" height="11.3" rx="1" class="wv-user"/>
+<rect x="391.2" y="45.4" width="2" height="5.2" rx="1" class="wv-user"/>
+<rect x="394.4" y="43.5" width="2" height="9.1" rx="1" class="wv-user"/>
+<rect x="397.6" y="42.3" width="2" height="11.4" rx="1" class="wv-user"/>
+<rect x="400.8" y="43" width="2" height="10.1" rx="1" class="wv-user"/>
+<rect x="404" y="46" width="2" height="4.1" rx="1" class="wv-user"/>
+<rect x="407.2" y="44.9" width="2" height="6.1" rx="1" class="wv-user"/>
+<rect x="410.4" y="43.6" width="2" height="8.7" rx="1" class="wv-user"/>
+<rect x="413.6" y="44.6" width="2" height="6.8" rx="1" class="wv-user"/>
+<rect x="416.8" y="46.3" width="2" height="3.4" rx="1" class="wv-user"/>
+<rect x="420" y="46.8" width="2" height="2.4" rx="1" class="wv-user"/>
+<rect x="100" y="72.3" width="2" height="3.4" rx="1" class="wv-model"/>
+<rect x="103.2" y="72.5" width="2" height="3" rx="1" class="wv-model"/>
+<rect x="106.4" y="70.6" width="2" height="6.8" rx="1" class="wv-model"/>
+<rect x="109.6" y="67.3" width="2" height="13.4" rx="1" class="wv-model"/>
+<rect x="112.8" y="70.5" width="2" height="7.1" rx="1" class="wv-model"/>
+<rect x="116" y="65.9" width="2" height="16.3" rx="1" class="wv-model"/>
+<rect x="119.2" y="67.2" width="2" height="13.5" rx="1" class="wv-model"/>
+<rect x="122.4" y="66.5" width="2" height="14.9" rx="1" class="wv-model"/>
+<rect x="125.6" y="71" width="2" height="6" rx="1" class="wv-model"/>
+<rect x="128.8" y="67.7" width="2" height="12.6" rx="1" class="wv-model"/>
+<rect x="132" y="67" width="2" height="14" rx="1" class="wv-model"/>
+<rect x="135.2" y="69.7" width="2" height="8.7" rx="1" class="wv-model"/>
+<rect x="138.4" y="70.9" width="2" height="6.3" rx="1" class="wv-model"/>
+<rect x="141.6" y="72.2" width="2" height="3.6" rx="1" class="wv-model"/>
+<rect x="292" y="72.8" width="2" height="2.4" rx="1" class="wv-model"/>
+<rect x="295.2" y="72.3" width="2" height="3.3" rx="1" class="wv-model"/>
+<rect x="298.4" y="68.5" width="2" height="11.1" rx="1" class="wv-model"/>
+<rect x="301.6" y="69.3" width="2" height="9.5" rx="1" class="wv-model"/>
+<rect x="304.8" y="67.9" width="2" height="12.2" rx="1" class="wv-model"/>
+<rect x="308" y="68.1" width="2" height="11.8" rx="1" class="wv-model"/>
+<rect x="311.2" y="66.8" width="2" height="14.3" rx="1" class="wv-model"/>
+<rect x="314.4" y="67.6" width="2" height="12.7" rx="1" class="wv-model"/>
+<rect x="317.6" y="69.4" width="2" height="9.3" rx="1" class="wv-model"/>
+<rect x="320.8" y="70.1" width="2" height="7.7" rx="1" class="wv-model"/>
+<rect x="324" y="70.9" width="2" height="6.2" rx="1" class="wv-model"/>
+<rect x="327.2" y="69.4" width="2" height="9.3" rx="1" class="wv-model"/>
+<rect x="330.4" y="67.1" width="2" height="13.9" rx="1" class="wv-model"/>
+<rect x="333.6" y="70.1" width="2" height="7.8" rx="1" class="wv-model"/>
+<rect x="336.8" y="71.2" width="2" height="5.5" rx="1" class="wv-model"/>
+<rect x="340" y="72.7" width="2" height="2.6" rx="1" class="wv-model"/>
+<rect x="343.2" y="72.8" width="2" height="2.4" rx="1" class="wv-model"/>
+<rect x="484" y="72.8" width="2" height="2.4" rx="1" class="wv-model"/>
+<rect x="487.2" y="72.6" width="2" height="2.9" rx="1" class="wv-model"/>
+<rect x="490.4" y="72" width="2" height="4" rx="1" class="wv-model"/>
+<rect x="493.6" y="67.5" width="2" height="12.9" rx="1" class="wv-model"/>
+<rect x="496.8" y="71.4" width="2" height="5.2" rx="1" class="wv-model"/>
+<rect x="500" y="70.3" width="2" height="7.4" rx="1" class="wv-model"/>
+<rect x="503.2" y="68.2" width="2" height="11.6" rx="1" class="wv-model"/>
+<rect x="506.4" y="68.3" width="2" height="11.4" rx="1" class="wv-model"/>
+<rect x="509.6" y="69.2" width="2" height="9.7" rx="1" class="wv-model"/>
+<rect x="512.8" y="70.7" width="2" height="6.5" rx="1" class="wv-model"/>
+<rect x="516" y="69.1" width="2" height="9.8" rx="1" class="wv-model"/>
+<rect x="519.2" y="66.3" width="2" height="15.4" rx="1" class="wv-model"/>
+<rect x="522.4" y="69.3" width="2" height="9.4" rx="1" class="wv-model"/>
+<rect x="525.6" y="71" width="2" height="6.1" rx="1" class="wv-model"/>
+<rect x="528.8" y="71.6" width="2" height="4.7" rx="1" class="wv-model"/>
+<rect x="532" y="69.9" width="2" height="8.1" rx="1" class="wv-model"/>
+<rect x="535.2" y="72.8" width="2" height="2.4" rx="1" class="wv-model"/>
+<rect x="100" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="109.6" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="119.2" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="128.8" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="138.4" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="148" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="157.6" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="167.2" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="176.8" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="186.4" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="196" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="205.6" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="215.2" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="224.8" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="234.4" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="244" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="253.6" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="263.2" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="272.8" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="282.4" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="292" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="301.6" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="311.2" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="320.8" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="330.4" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="340" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="349.6" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="359.2" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="368.8" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="378.4" y="94" width="7.6" height="12" rx="1.5" class="fr-sil"/>
+<rect x="388" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="397.6" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="407.2" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="416.8" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="426.4" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="436" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="445.6" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="455.2" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="464.8" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="474.4" y="94" width="7.6" height="12" rx="1.5" class="fr-on"/>
+<rect x="484" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="493.6" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="503.2" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="512.8" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="522.4" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<rect x="532" y="94" width="7.6" height="12" rx="1.5" class="fr-off"/>
+<line x1="291" y1="30" x2="291" y2="109" class="onl"/>
+<line x1="483" y1="30" x2="483" y2="109" class="onl"/>
+<text x="487" y="36" class="lab">onset</text>
+<path d="M350.6,112 V117 H385 V112" class="ln-sil"/>
+<path d="M389,112 V117 H481 V112" class="ln-on"/>
+<text x="488" y="121" class="lab on">800 ms</text>
+<path d="M367.8,117 V157 C367.8,209 262,150 262,220" class="ln-sil" marker-end="url(#f1-ah-ink)"/>
+<line x1="436" y1="117" x2="436" y2="188" class="ln-on" marker-end="url(#f1-ah-lav)"/>
+<text x="360.8" y="149" class="lab" text-anchor="end">silent frames</text>
+<text x="443" y="149" class="lab on">onset frames</text>
+<rect x="118" y="166" width="441.5" height="152" rx="12" class="plane"/>
+<text x="132" y="305" class="lab">residual <tspan class="math">h</tspan> at L30</text>
+<path d="M336.1,247.6 L335.8,250.5 L334.7,253.5 L332.8,256.4 L330.4,259.3 L327.4,262.1 L324,264.8 L320.2,267.4 L316.2,269.8 L311.9,272.1 L307.5,274.3 L302.8,276.4 L298.1,278.3 L293.1,280.1 L288,281.8 L282.7,283.3 L277.3,284.7 L271.7,285.9 L266,286.8 L260.3,287.5 L254.6,288 L249,288.2 L243.5,288.1 L238.2,287.8 L233.1,287.3 L228.3,286.5 L223.7,285.6 L219.3,284.5 L215.3,283.2 L211.4,281.8 L207.8,280.2 L204.5,278.5 L201.3,276.7 L198.4,274.7 L195.8,272.6 L193.6,270.3 L191.8,267.9 L190.5,265.2 L189.9,262.5 L190,259.6 L190.9,256.6 L192.6,253.6 L195.1,250.6 L198.4,247.7 L202.4,245 L207.1,242.5 L212.3,240.2 L217.9,238.2 L223.8,236.5 L229.8,235.1 L235.8,234 L241.7,233.1 L247.4,232.5 L252.9,232 L258.3,231.6 L263.5,231.3 L268.6,231.1 L273.7,230.9 L278.8,230.7 L283.9,230.5 L289.2,230.5 L294.5,230.5 L300,230.7 L305.4,231.1 L310.8,231.7 L315.9,232.7 L320.8,233.9 L325.1,235.5 L328.9,237.4 L331.9,239.6 L334.1,242.1 L335.5,244.8 Z" class="ct-neg lv0"/>
+<path d="M305,249.7 L304.8,251.5 L304.2,253.3 L303.5,255.1 L302.4,256.9 L301.1,258.7 L299.5,260.4 L297.5,262.2 L295.3,263.9 L292.8,265.5 L290,267 L287,268.4 L283.7,269.7 L280.3,270.8 L276.7,271.8 L273.1,272.7 L269.4,273.4 L265.7,273.9 L262.1,274.3 L258.5,274.6 L254.9,274.9 L251.4,275 L247.8,275.1 L244.3,275.1 L240.8,275 L237.3,274.8 L233.7,274.6 L230.2,274.2 L226.7,273.7 L223.4,273 L220.2,272.2 L217.3,271.1 L214.7,269.8 L212.6,268.4 L211,266.7 L210,265 L209.6,263.1 L209.9,261.1 L210.7,259.1 L212.1,257.1 L214.1,255.2 L216.4,253.3 L219.1,251.6 L222,250 L225.1,248.5 L228.3,247.2 L231.5,246 L234.6,244.8 L237.7,243.8 L240.8,242.8 L243.9,241.8 L247,240.8 L250.2,239.8 L253.5,238.9 L257,238 L260.6,237.1 L264.3,236.4 L268.2,235.8 L272.2,235.4 L276.2,235.1 L280.2,235.1 L284,235.3 L287.7,235.8 L291.1,236.4 L294.2,237.3 L296.9,238.5 L299.2,239.8 L301.2,241.2 L302.7,242.8 L303.8,244.4 L304.5,246.1 L304.9,247.9 Z" class="ct-neg lv1"/>
+<path d="M295.5,253.8 L295.4,254.8 L295.2,255.7 L294.7,256.7 L294,257.6 L293.1,258.5 L292,259.4 L290.7,260.2 L289.4,261 L287.9,261.7 L286.3,262.4 L284.8,263 L283.2,263.6 L281.5,264.2 L279.9,264.7 L278.2,265.2 L276.6,265.7 L274.8,266.1 L273,266.6 L271.1,267 L269.2,267.4 L267.1,267.8 L265,268.1 L262.9,268.2 L260.7,268.3 L258.6,268.3 L256.5,268.1 L254.6,267.7 L252.9,267.3 L251.4,266.7 L250.2,266 L249.3,265.2 L248.7,264.3 L248.3,263.3 L248.2,262.3 L248.4,261.4 L248.8,260.4 L249.3,259.4 L250,258.5 L250.7,257.6 L251.6,256.8 L252.4,255.9 L253.3,255.1 L254.2,254.3 L255.2,253.6 L256.2,252.8 L257.3,252 L258.4,251.2 L259.7,250.4 L261.2,249.7 L262.8,249 L264.5,248.3 L266.3,247.7 L268.2,247.2 L270.2,246.8 L272.3,246.5 L274.4,246.2 L276.4,246.1 L278.5,246.1 L280.4,246.2 L282.3,246.4 L284.1,246.7 L285.8,247 L287.4,247.4 L288.8,247.9 L290.2,248.5 L291.4,249.1 L292.5,249.7 L293.4,250.5 L294.2,251.2 L294.8,252.1 L295.2,252.9 Z" class="ct-neg lv2"/>
+<circle cx="286.3" cy="276" r="1.8" class="ct-neg-dot"/>
+<circle cx="258.7" cy="276.9" r="1.8" class="ct-neg-dot"/>
+<circle cx="250.9" cy="258.8" r="1.8" class="ct-neg-dot"/>
+<circle cx="248.5" cy="255" r="1.8" class="ct-neg-dot"/>
+<circle cx="279.3" cy="246.1" r="1.8" class="ct-neg-dot"/>
+<circle cx="283.2" cy="248.9" r="1.8" class="ct-neg-dot"/>
+<circle cx="247.4" cy="252.7" r="1.8" class="ct-neg-dot"/>
+<circle cx="216.4" cy="264.7" r="1.8" class="ct-neg-dot"/>
+<circle cx="252.3" cy="265.8" r="1.8" class="ct-neg-dot"/>
+<circle cx="235.2" cy="260.7" r="1.8" class="ct-neg-dot"/>
+<circle cx="278.3" cy="263.9" r="1.8" class="ct-neg-dot"/>
+<circle cx="226.6" cy="259.8" r="1.8" class="ct-neg-dot"/>
+<circle cx="223.8" cy="267.4" r="1.8" class="ct-neg-dot"/>
+<circle cx="267.2" cy="272.8" r="1.8" class="ct-neg-dot"/>
+<circle cx="294.4" cy="262" r="1.8" class="ct-neg-dot"/>
+<circle cx="316.4" cy="239.3" r="1.8" class="ct-neg-dot"/>
+<circle cx="233.3" cy="254.2" r="1.8" class="ct-neg-dot"/>
+<circle cx="268.7" cy="264" r="1.8" class="ct-neg-dot"/>
+<circle cx="286.2" cy="259.4" r="1.8" class="ct-neg-dot"/>
+<circle cx="237.7" cy="258.5" r="1.8" class="ct-neg-dot"/>
+<circle cx="277" cy="250.1" r="1.8" class="ct-neg-dot"/>
+<circle cx="252.3" cy="267.3" r="1.8" class="ct-neg-dot"/>
+<path d="M493,207.8 L493.3,210.1 L493.2,212.5 L492.5,215 L491.3,217.6 L489.5,220.1 L487.3,222.7 L484.6,225.2 L481.5,227.5 L478.1,229.8 L474.4,231.9 L470.5,233.9 L466.6,235.8 L462.6,237.6 L458.5,239.2 L454.4,240.8 L450.2,242.2 L446.1,243.7 L441.8,245.1 L437.3,246.5 L432.8,247.8 L428,249.1 L423.1,250.2 L418,251.2 L412.9,251.9 L407.7,252.5 L402.6,252.6 L397.7,252.5 L393.1,252 L389,251 L385.4,249.7 L382.5,248.1 L380.3,246.1 L378.8,243.9 L378.1,241.5 L378,238.9 L378.6,236.3 L379.7,233.7 L381.2,231.1 L383.1,228.5 L385.2,226.1 L387.5,223.7 L389.8,221.4 L392.2,219.2 L394.7,217 L397.2,214.8 L399.9,212.6 L402.7,210.5 L405.7,208.3 L408.9,206.1 L412.4,204 L416.3,201.9 L420.4,199.9 L424.9,198 L429.6,196.4 L434.5,194.9 L439.5,193.7 L444.6,192.8 L449.6,192.2 L454.6,191.9 L459.3,191.8 L463.8,192.1 L468.1,192.6 L472,193.3 L475.7,194.3 L479,195.4 L482.1,196.7 L484.8,198.2 L487.2,199.8 L489.2,201.6 L490.9,203.5 L492.2,205.6 Z" class="ct-pos lv0"/>
+<path d="M474.1,214.7 L473.6,216.3 L472.9,218 L471.8,219.6 L470.5,221.2 L469.1,222.8 L467.5,224.3 L465.9,225.7 L464.3,227.2 L462.6,228.6 L460.8,230 L459,231.4 L457.1,232.8 L455.1,234.3 L452.8,235.8 L450.4,237.3 L447.7,238.7 L444.8,240.1 L441.6,241.4 L438.3,242.6 L434.8,243.6 L431.2,244.4 L427.6,244.9 L424.1,245.2 L420.7,245.2 L417.6,244.9 L414.8,244.4 L412.3,243.7 L410.2,242.8 L408.4,241.7 L407,240.5 L405.9,239.2 L405.1,237.8 L404.5,236.4 L404.1,235 L403.8,233.6 L403.7,232.2 L403.7,230.8 L403.8,229.4 L404,228 L404.3,226.5 L404.8,225 L405.5,223.4 L406.5,221.9 L407.7,220.3 L409.2,218.7 L411,217.1 L413,215.5 L415.4,214 L417.9,212.5 L420.7,211.2 L423.6,210 L426.7,208.8 L429.8,207.8 L433,207 L436.3,206.2 L439.5,205.6 L442.8,205.1 L446,204.7 L449.2,204.4 L452.4,204.2 L455.5,204.2 L458.5,204.4 L461.4,204.7 L464,205.1 L466.5,205.8 L468.7,206.6 L470.6,207.6 L472.1,208.8 L473.2,210.1 L473.9,211.5 L474.2,213.1 Z" class="ct-pos lv1"/>
+<path d="M444.3,217.8 L444.3,218.5 L444.2,219.2 L444.1,219.9 L444,220.6 L443.8,221.3 L443.6,222.1 L443.3,222.9 L442.9,223.8 L442.4,224.6 L441.7,225.5 L440.8,226.4 L439.7,227.3 L438.4,228.2 L437,229 L435.4,229.7 L433.7,230.4 L431.9,231 L430.1,231.4 L428.3,231.7 L426.5,232 L424.7,232.1 L423.1,232.1 L421.5,232 L420.1,231.8 L418.7,231.6 L417.5,231.3 L416.3,231 L415.3,230.6 L414.3,230.2 L413.3,229.8 L412.5,229.3 L411.7,228.8 L411,228.3 L410.5,227.7 L410,227.1 L409.6,226.4 L409.4,225.7 L409.4,224.9 L409.5,224.2 L409.8,223.3 L410.2,222.5 L410.8,221.7 L411.5,220.9 L412.3,220 L413.3,219.2 L414.3,218.4 L415.4,217.7 L416.6,216.9 L417.9,216.2 L419.3,215.5 L420.7,214.8 L422.2,214.1 L423.8,213.5 L425.5,212.9 L427.2,212.4 L429,212 L430.8,211.6 L432.5,211.4 L434.3,211.2 L436,211.2 L437.6,211.3 L439,211.6 L440.3,211.9 L441.4,212.4 L442.3,212.9 L443,213.5 L443.6,214.2 L443.9,214.9 L444.2,215.6 L444.3,216.3 L444.3,217.1 Z" class="ct-pos lv2"/>
+<circle cx="458" cy="235.5" r="1.8" class="ct-pos-dot"/>
+<circle cx="409.9" cy="214.1" r="1.8" class="ct-pos-dot"/>
+<circle cx="421" cy="216.5" r="1.8" class="ct-pos-dot"/>
+<circle cx="434.4" cy="207.6" r="1.8" class="ct-pos-dot"/>
+<circle cx="445.9" cy="216.4" r="1.8" class="ct-pos-dot"/>
+<circle cx="444.5" cy="221.2" r="1.8" class="ct-pos-dot"/>
+<circle cx="442.4" cy="217.1" r="1.8" class="ct-pos-dot"/>
+<circle cx="461.2" cy="227.3" r="1.8" class="ct-pos-dot"/>
+<circle cx="456.3" cy="222.2" r="1.8" class="ct-pos-dot"/>
+<circle cx="433.4" cy="230.2" r="1.8" class="ct-pos-dot"/>
+<circle cx="420.5" cy="212.6" r="1.8" class="ct-pos-dot"/>
+<circle cx="427.1" cy="239.3" r="1.8" class="ct-pos-dot"/>
+<circle cx="470.9" cy="220.5" r="1.8" class="ct-pos-dot"/>
+<circle cx="435.5" cy="209.2" r="1.8" class="ct-pos-dot"/>
+<circle cx="449.8" cy="240.5" r="1.8" class="ct-pos-dot"/>
+<circle cx="433.7" cy="236.3" r="1.8" class="ct-pos-dot"/>
+<circle cx="407.7" cy="240.8" r="1.8" class="ct-pos-dot"/>
+<circle cx="416.5" cy="215.4" r="1.8" class="ct-pos-dot"/>
+<circle cx="412.7" cy="238.1" r="1.8" class="ct-pos-dot"/>
+<circle cx="425.8" cy="234.4" r="1.8" class="ct-pos-dot"/>
+<line x1="270.8" y1="256.2" x2="427.2" y2="223.8" class="u" marker-end="url(#f1-ah-u)"/>
+<circle cx="262" cy="258" r="4.6" class="mean-neg"/>
+<circle cx="436" cy="222" r="4.6" class="mean-pos"/>
+<text x="248" y="281" class="math sym halo" text-anchor="end">μ<tspan dx="1" dy="2" font-size="13">−</tspan></text>
+<text x="453" y="209" class="math sym on halo">μ<tspan dx="1" dy="2" font-size="13">+</tspan></text>
+<text x="346.4" y="227.3" class="math big on" text-anchor="middle">u</text>
+<text x="375" y="266" class="uname halo" text-anchor="middle">initiative vector</text>
+<polygon points="70,231 118,178 118,306 70,253" class="wedge"/>
+<line x1="38" y1="322" x2="38" y2="199" class="trunk"/>
+<rect x="6" y="199" width="64" height="22" rx="5" class="blk"/>
+<text x="38" y="214" class="blk-t" text-anchor="middle">L31</text>
+<rect x="6" y="231" width="64" height="22" rx="5" class="blk-on"/>
+<text x="38" y="246" class="blk-t-on" text-anchor="middle">L30</text>
+<circle cx="38" cy="262" r="1.5" class="ct-neg-dot"/>
+<circle cx="38" cy="268.5" r="1.5" class="ct-neg-dot"/>
+<circle cx="38" cy="275" r="1.5" class="ct-neg-dot"/>
+<rect x="6" y="289" width="64" height="22" rx="5" class="blk"/>
+<text x="38" y="304" class="blk-t" text-anchor="middle">L0</text>
+<rect x="21" y="330.8" width="1.6" height="2.4" rx="1" class="wv-user"/>
+<rect x="24.2" y="330.4" width="1.6" height="3.1" rx="1" class="wv-user"/>
+<rect x="27.4" y="329.9" width="1.6" height="4.1" rx="1" class="wv-user"/>
+<rect x="30.6" y="330.8" width="1.6" height="2.4" rx="1" class="wv-user"/>
+<rect x="33.8" y="329.2" width="1.6" height="5.6" rx="1" class="wv-user"/>
+<rect x="37" y="329.1" width="1.6" height="5.8" rx="1" class="wv-user"/>
+<rect x="40.2" y="329.7" width="1.6" height="4.5" rx="1" class="wv-user"/>
+<rect x="43.4" y="328.8" width="1.6" height="6.4" rx="1" class="wv-user"/>
+<rect x="46.6" y="330.3" width="1.6" height="3.3" rx="1" class="wv-user"/>
+<rect x="49.8" y="330.6" width="1.6" height="2.8" rx="1" class="wv-user"/>
+<rect x="53" y="330.8" width="1.6" height="2.4" rx="1" class="wv-user"/>
+<text x="38" y="354" class="lab" text-anchor="middle">audio in</text>
+<text x="0" y="386" class="key">b</text>
+<text x="17" y="386" class="head">Read and shift at L30</text>
+<line x1="206" y1="320" x2="206" y2="397" class="ln-sil" marker-end="url(#f1-ah-ink)"/>
+<text x="213" y="348" class="lab">read out</text>
+<line x1="426" y1="399" x2="426" y2="322" class="ln-on" marker-end="url(#f1-ah-lav)"/>
+<text x="433" y="348" class="lab on">write in</text>
+<rect x="0.5" y="400" width="267" height="176" rx="12" class="card"/>
+<rect x="292.5" y="400" width="267" height="176" rx="12" class="card"/>
+<text x="15" y="425" class="ctitle">Read <tspan class="math" dx="3">h · u</tspan></text>
+<rect x="150" y="434" width="42" height="98" class="band"/>
+<line x1="15" y1="532" x2="253" y2="532" class="axis"/>
+<line x1="192" y1="434" x2="192" y2="562" class="onl"/>
+<text x="197" y="444" class="lab">onset</text>
+<polyline points="15,511.6 17,511.3 19,511.2 21,511.1 23,511.1 25,511.2 27,511.3 29,511.4 31,511.4 33,511.3 35,511.1 37,510.7 39,510.1 41,509.4 43,508.7 45,508 47,507.3 49,506.8 51,506.5 53,506.4 55,506.6 57,507 59,507.6 61,508.3 63,509.1 65,509.9 67,510.6 69,511.2 71,511.6 73,511.8 75,511.9 77,511.8 79,511.6 81,511.5 83,511.3 85,511.2 87,511.2 89,511.3 91,511.4 93,511.6 95,511.8 97,511.9 99,511.9 101,511.7 103,511.3 105,510.8 107,510.1 109,509.4 111,508.6 113,507.8 115,507.1 117,506.7 119,506.4 121,506.4 123,506.6 125,507.1 127,507.7 129,508.3 131,509 133,509.6 135,510.1 137,510.5 139,510.6 141,510.6 143,510.3 145,509.9 147,509.4 149,508.8 151,508 153,507.2 155,506.1 157,504.8 159,503.2 161,501.2 163,498.7 165,495.8 167,492.4 169,488.8 171,485 173,481.3 175,477.8 177,474.7 179,472.1 181,469.9 183,468.1 185,466.7 187,465.6 189,464.8 191,464.1" class="curve"/>
+<polyline points="192,462.7 194,462.5 196,462.3 198,462 200,461.7 202,461.5 204,461.2 206,461.1 208,460.9 210,460.8 212,460.8 214,460.8 216,460.9 218,461.1 220,461.2 222,461.5 224,461.7 226,462 228,462.2 230,462.5 232,462.7 234,462.9 236,463.1 238,463.2 240,463.2 242,463.2 244,463.1 246,463 248,462.8 250,462.6 252,462.3" class="curve faint"/>
+<rect x="30" y="550.8" width="2" height="2.4" rx="1" class="wv-user"/>
+<rect x="33.2" y="550.8" width="2" height="2.4" rx="1" class="wv-user"/>
+<rect x="36.4" y="550.6" width="2" height="2.9" rx="1" class="wv-user"/>
+<rect x="39.6" y="549.9" width="2" height="4.2" rx="1" class="wv-user"/>
+<rect x="42.8" y="550.7" width="2" height="2.6" rx="1" class="wv-user"/>
+<rect x="46" y="549.1" width="2" height="5.8" rx="1" class="wv-user"/>
+<rect x="49.2" y="547.9" width="2" height="8.3" rx="1" class="wv-user"/>
+<rect x="52.4" y="549.8" width="2" height="4.3" rx="1" class="wv-user"/>
+<rect x="55.6" y="549.6" width="2" height="4.7" rx="1" class="wv-user"/>
+<rect x="58.8" y="547.7" width="2" height="8.7" rx="1" class="wv-user"/>
+<rect x="62" y="547.2" width="2" height="9.6" rx="1" class="wv-user"/>
+<rect x="65.2" y="547.9" width="2" height="8.3" rx="1" class="wv-user"/>
+<rect x="68.4" y="550" width="2" height="4" rx="1" class="wv-user"/>
+<rect x="71.6" y="548.2" width="2" height="7.5" rx="1" class="wv-user"/>
+<rect x="74.8" y="546.9" width="2" height="10.2" rx="1" class="wv-user"/>
+<rect x="78" y="547.1" width="2" height="9.7" rx="1" class="wv-user"/>
+<rect x="81.2" y="549.8" width="2" height="4.3" rx="1" class="wv-user"/>
+<rect x="84.4" y="548.4" width="2" height="7.2" rx="1" class="wv-user"/>
+<rect x="87.6" y="546.1" width="2" height="11.8" rx="1" class="wv-user"/>
+<rect x="90.8" y="546.5" width="2" height="11" rx="1" class="wv-user"/>
+<rect x="94" y="548.3" width="2" height="7.4" rx="1" class="wv-user"/>
+<rect x="97.2" y="548.9" width="2" height="6.2" rx="1" class="wv-user"/>
+<rect x="100.4" y="548.4" width="2" height="7.1" rx="1" class="wv-user"/>
+<rect x="103.6" y="550.1" width="2" height="3.8" rx="1" class="wv-user"/>
+<rect x="106.8" y="547.2" width="2" height="9.6" rx="1" class="wv-user"/>
+<rect x="110" y="549.5" width="2" height="4.9" rx="1" class="wv-user"/>
+<rect x="113.2" y="549.5" width="2" height="4.9" rx="1" class="wv-user"/>
+<rect x="116.4" y="548.9" width="2" height="6.2" rx="1" class="wv-user"/>
+<rect x="119.6" y="549.2" width="2" height="5.6" rx="1" class="wv-user"/>
+<rect x="122.8" y="549.7" width="2" height="4.6" rx="1" class="wv-user"/>
+<rect x="126" y="550.5" width="2" height="3" rx="1" class="wv-user"/>
+<rect x="129.2" y="549.6" width="2" height="4.7" rx="1" class="wv-user"/>
+<rect x="132.4" y="550.2" width="2" height="3.5" rx="1" class="wv-user"/>
+<rect x="135.6" y="550.8" width="2" height="2.4" rx="1" class="wv-user"/>
+<rect x="198" y="550.8" width="2" height="2.4" rx="1" class="wv-model"/>
+<rect x="201.2" y="549.6" width="2" height="4.7" rx="1" class="wv-model"/>
+<rect x="204.4" y="548.9" width="2" height="6.2" rx="1" class="wv-model"/>
+<rect x="207.6" y="548.6" width="2" height="6.8" rx="1" class="wv-model"/>
+<rect x="210.8" y="549.1" width="2" height="5.8" rx="1" class="wv-model"/>
+<rect x="214" y="545.9" width="2" height="12.2" rx="1" class="wv-model"/>
+<rect x="217.2" y="545.5" width="2" height="13" rx="1" class="wv-model"/>
+<rect x="220.4" y="549.2" width="2" height="5.5" rx="1" class="wv-model"/>
+<rect x="223.6" y="546.5" width="2" height="11.1" rx="1" class="wv-model"/>
+<rect x="226.8" y="549.5" width="2" height="4.9" rx="1" class="wv-model"/>
+<rect x="230" y="545.3" width="2" height="13.3" rx="1" class="wv-model"/>
+<rect x="233.2" y="547.7" width="2" height="8.5" rx="1" class="wv-model"/>
+<rect x="236.4" y="548.6" width="2" height="6.8" rx="1" class="wv-model"/>
+<rect x="239.6" y="548.3" width="2" height="7.4" rx="1" class="wv-model"/>
+<rect x="242.8" y="549.4" width="2" height="5.3" rx="1" class="wv-model"/>
+<rect x="246" y="550" width="2" height="4" rx="1" class="wv-model"/>
+<rect x="249.2" y="550.8" width="2" height="2.4" rx="1" class="wv-model"/>
+<text x="307" y="425" class="ctitle">Shift <tspan class="math" dx="3">h′ = h + α s u</tspan></text>
+<text x="307" y="446" class="lab">speech ratio</text>
+<line x1="307" y1="532" x2="545" y2="532" class="axis"/>
+<line x1="307" y1="496" x2="545" y2="496" class="def"/>
+<text x="307" y="490" class="lab">default</text>
+<rect x="340.8" y="520.8" width="22.5" height="10.5" rx="3" class="col-neg"/>
+<text x="352" y="556" class="tick" text-anchor="middle">−2<tspan class="math">a</tspan></text>
+<rect x="384.8" y="510.8" width="22.5" height="20.5" rx="3" class="col-neg"/>
+<text x="396" y="556" class="tick" text-anchor="middle">−<tspan class="math">a</tspan></text>
+<rect x="428" y="496" width="24" height="36" rx="3" class="col-def"/>
+<text x="440" y="556" class="tick" text-anchor="middle">0</text>
+<rect x="472" y="478" width="24" height="54" rx="3" class="col-pos"/>
+<text x="484" y="556" class="tick" text-anchor="middle">+<tspan class="math">a</tspan></text>
+<rect x="516" y="458" width="24" height="74" rx="3" class="col-pos"/>
+<text x="528" y="556" class="tick" text-anchor="middle">+2<tspan class="math">a</tspan></text>
+<text x="307" y="556" class="tick"><tspan class="math">α</tspan></text>
+</svg>
+</div>
+    <figcaption>
+      <span class="eyebrow">Fig. 1 · Method</span>
+      <span class="fig-title">One direction, read and shifted.</span>
+      <span><b>(a)</b> From the model's own unsteered conversations, with no training and no annotation: among frames where the model has been silent, average the L30 residual before an onset within 800&nbsp;ms (μ<sub>+</sub>) and before continued silence (μ<sub>−</sub>); u = (μ<sub>+</sub> − μ<sub>−</sub>)/‖μ<sub>+</sub> − μ<sub>−</sub>‖.</span>
+      <span><b>(b)</b> The projection h·u rises before the model takes the floor; adding h′ = h + α s u at every 80-ms frame shifts how much it speaks. s is the listen-to-speak swing of the projection, so doses compare across weights.</span>
+    </figcaption>
+  </figure>
+
+  <div class="numbers">
+    <div class="num ours">
+      <span class="eyebrow">Control range</span>
+      <div class="big">6–12% <span class="arrow">→</span> 42–61%</div>
+      <div class="lbl">Speech ratio across doses −2a … +2a, mean of 500 held-out conversations per weight.</div>
+    </div>
+    <div class="num">
+      <span class="eyebrow">Speaker-specific</span>
+      <div class="big">92.7 / 98.0 / 95.6%</div>
+      <div class="lbl">of reference pairs where giving a speaker someone else's dose makes the match worse (568 held-out speakers).</div>
+    </div>
+    <div class="num">
+      <span class="eyebrow">Calibration</span>
+      <div class="big">93–99.5%</div>
+      <div class="lbl">of the best achievable per-speaker gain, reached with a dose picked from the five-minute recording alone (568 held-out speakers).</div>
+    </div>
+  </div>
+  <ul class="takes">
+    <li><b>No training, no labels</b><span>to find the direction</span></li>
+    <li><b>No retraining</b><span>one five-minute recording personalizes it</span></li>
+    <li><b>Cheap to calibrate</b><span>ten conversations per weight already reach the plateau of the gain; a new speaker's dose then comes from the recording alone, with no model run</span></li>
+    <li><b>A property of the speaker</b><span>across Moshika, Moshika-RL and PersonaPlex, the same speaker's doses rank alike (Spearman 0.70–0.81)</span></li>
+  </ul>
+</div>
+
+<main class="wrap">
+  <section id="transfer">
+    <p class="kicker">01 · Sounds like you</p>
+    <h2>One conversation, two speakers, opposite directions</h2>
+    <p class="lede">Same partner (left channel), same model. Only the five-minute reference changes: a quiet speaker pulls the model below its default, a talkative one pushes it above. The model output (right channel) moves toward each speaker. Doses are steps along the initiative vector (see 02).</p>
+    <div class="tabs" data-section="transfer"></div>
+    <div class="panel" id="transfer-panel"></div>
+  </section>
+
+  <section id="sweep">
+    <p class="kicker">02 · Hear it change</p>
+    <h2>Five doses, one conversation, one seed</h2>
+    <p class="lede">Same input, same random seed; only the dose added along the initiative vector changes, from −2a to +2a. The model goes from barely speaking to holding the floor. The same direction and scale carry over to a second corpus, CANDOR, without refitting.</p>
+    <div class="tabs" data-section="sweep"></div>
+    <div class="panel" id="sweep-panel"></div>
+  </section>
+
+  <section id="random">
+    <p class="kicker">03 · It is this direction</p>
+    <h2>Same displacement, random direction: the model does not take the floor</h2>
+    <p class="lede">Same conversation as the dose sweep. All four clips share input, seed and displacement (+2a); only the direction differs. Swap the initiative vector for random unit directions, injected at the same layer with the same norm: the model does not start taking the floor. Only the initiative vector pushes it up.</p>
+    <div class="tabs" data-section="random"></div>
+    <div class="panel" id="random-panel"></div>
+  </section>
+
+  <section id="readout">
+    <p class="kicker">04 · It knows before it speaks</p>
+    <h2>The projection rises before the model takes the floor</h2>
+    <p class="lede">Unsteered model on a representative held-out conversation. The curve is the per-frame projection of the L30 residual on the initiative vector, shown while the model is silent (the frames the readout is scored on); colored spans are where the model speaks. The projection climbs while the model is still silent and peaks as it takes the floor, anticipating onsets up to 800&nbsp;ms ahead. The same direction that shifts the decision also reads it before any audio comes out.</p>
+    <div class="tabs" data-section="readout"></div>
+    <div class="panel" id="readout-panel"></div>
+  </section>
+
+  <section id="choice">
+    <details>
+      <summary>How these examples were chosen</summary>
+      <div id="choice-body"></div>
+    </details>
+  </section>
+</main>
+
+<footer class="wrap foot" id="cite">
+  <div>
+  <h2>Citation</h2>
+  <div class="bib-wrap">
+  <button class="copy" id="copy-bib" type="button">Copy</button>
+  <pre class="bib"><code>@article{placeholder2026turntaking,
+  title   = {Reference-Guided Turn-Taking Style Transfer for Full-Duplex Spoken Language Models},
+  author  = {To be added},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}</code></pre>
+  </div>
+  </div>
+  <div>
+  <h2>Data and models</h2>
+  <p>Conversations and reference recordings come from <a href="https://github.com/facebookresearch/seamless_interaction">Seamless Interaction</a> (Meta), released under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. Excerpts are trimmed, resampled to 24&nbsp;kHz and loudness-matched; the audio on this page is shared under the same license, for non-commercial research use.</p>
+  <p>Models: <a href="https://huggingface.co/kyutai/moshika-pytorch-bf16">Moshika</a> (Kyutai), <a href="https://huggingface.co/kyutai/moshika-rl-seamless">Moshika-RL</a> (Kyutai, post-trained with RL on Seamless Interaction), and <a href="https://huggingface.co/nvidia/personaplex-7b-v1">PersonaPlex-7B-v1</a> (NVIDIA). See each model card for its license. Model outputs on this page were generated by the authors with these weights, unmodified except for the steering described above.</p>
+  </div>
+</footer>
+
+<script src="data/samples.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
