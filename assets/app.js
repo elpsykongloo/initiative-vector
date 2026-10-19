@@ -155,9 +155,9 @@
       el("span", { text: first }), el("span", { text: "Partner / model, 25 s" }), el("span", { text: "Speech ratio" })]);
   }
   function nameOf(id) { return S.weights.filter(function (w) { return w.id === id; })[0].name; }
-  function sessionLine(d, id) {
+  function sessionLine(d, id, kind) {
     var shared = (d.shared_with || []).filter(function (x) { return x !== id; }).map(nameOf);
-    return el("p", { "class": "meta", html: "Conversation <code>" + d.session + "</code>, " + S.window_s + "-s excerpt" +
+    return el("p", { "class": "meta", html: (kind || "Conversation") + " <code>" + d.session + "</code>, " + S.window_s + "-s excerpt" +
       (shared.length ? " · same conversation as " + shared.join(", ") : " · conversation chosen for this weight") + "." });
   }
   // stat tiles: [value, label]; the value sits in the same place on every tile
@@ -177,7 +177,7 @@
   function renderTransfer(id) {
     var d = S.transfer[id], panel = document.getElementById("transfer-panel");
     panel.innerHTML = "";
-    panel.appendChild(sessionLine(d, id));
+    panel.appendChild(sessionLine(d, id, "Target conversation"));
     panel.appendChild(legend([["Partner", "var(--user)", "thin"], ["Reference speaker", "var(--ref)"], [nameOf(id), color(id)], ["No steering", "var(--rand)"]]));
     // one no-steering clip per weight: the model's default, the same for every reference
     panel.appendChild(el("div", { "class": "default-row" }, [
@@ -195,9 +195,11 @@
       grid.appendChild(el("div", { "class": "card" }, [
         el("h3", { text: it.label + " reference" }),
         el("p", { "class": "sub", text: "Speech-ratio percentile " + Math.round(100 * it.pct) + " of 568 held-out speakers · dose " + it.dose }),
-        el("div", { "class": "label", text: "Reference speaker · excerpt of the 5-min recording" }),
+        el("div", { "class": "label", text: "Reference speaker · own conversation, 25 s of the 5-min recording" }),
         player(it.ref, "ref"),
-        el("div", { "class": "label", text: nameOf(id) + " · calibrated to this reference" }),
+        // the output is on the target conversation, not the reference's; the rule keeps the two from reading as one segment
+        el("div", { "class": "label target", text: nameOf(id) + " · target conversation, calibrated to this reference" +
+          (it.model.model.length ? "" : " · no speech in this 25 s") }),
         player(it.model, id),
         el("div", { "class": "tables" }, [table])
       ]));
@@ -209,7 +211,7 @@
       [st.gain + "<small> SD</small>", "gain over the best single dose for everyone"],
       [st.share, "of the best-in-hindsight gain"],
       [st.spearman, "Spearman: calibrated model follows the reference speech ratio"]]));
-    panel.appendChild(el("p", { "class": "note", text: "Speech ratio is computed over the whole 64-s conversation (model, the clip's seed) and the whole 5-min recording (reference). Distance is the paper's match distance over speech ratio, overlap onsets and response probability (Eq. 3), in reference SD, averaged over three seeds on this conversation; lower is closer. In each reference clip the partner is on the left, the reference speaker on the right." }));
+    panel.appendChild(el("p", { "class": "note", text: "Speech ratio is computed over the whole 64-s target conversation (model, the clip's seed) and the whole 5-min recording (reference), not over the 25-s excerpts. Distance is the paper's match distance over speech ratio, overlap onsets and response probability (Eq. 3), in reference SD, averaged over three seeds on this conversation; lower is closer. In each reference clip the reference speaker's own partner is on the left, the reference speaker on the right." }));
   }
 
   // 2 · sweep
