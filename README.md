@@ -1,6 +1,6 @@
 # Reference-Guided Turn-Taking Style Transfer — audio examples
 
-Project page for *Reference-Guided Turn-Taking Style Transfer for Full-Duplex Spoken Language Models* (arXiv link to be added).
+Project page for *Reference-Guided Turn-Taking Style Transfer for Full-Duplex Spoken Language Models* ([arXiv:2610.20763](https://arxiv.org/abs/2610.20763)).
 
 The page is a static site served by GitHub Pages from this repository's root: `index.html`, `assets/`, `audio/` and `data/samples.js`.
 
