@@ -172,6 +172,12 @@
       return el("span", {}, [el("i", { "class": it[2] || "", style: "background:" + it[1] }), el("span", { text: it[0] })]);
     }));
   }
+  // clip heading in a transfer card: who speaks, with a swatch in the lane color, then where the clip comes from
+  function clipHead(name, fill, detail, divided) {
+    return el("div", { "class": "clip-head" + (divided ? " target" : "") }, [
+      el("h4", {}, [el("i", { style: "background:" + fill, "aria-hidden": "true" }), el("span", { text: name })]),
+      el("p", { text: detail })]);
+  }
 
   // 1 · transfer
   function renderTransfer(id) {
@@ -192,15 +198,18 @@
         "<thead><tr><th></th><th>Ref.</th><th>Default</th><th>Calib.</th></tr></thead><tbody>" +
         "<tr><td>Speech ratio</td><td>" + pct(it.ref.desc.sr) + "</td><td>" + pct(d["default"].desc.sr) + "</td><td>" + pct(it.model.desc.sr) + "</td></tr>" +
         "<tr class=\"dist\"><td>Distance to ref. <small>SD</small></td><td>–</td><td>" + f2(it.dist.no_steering) + "</td><td class=\"win\">" + f2(it.dist.own) + "</td></tr></tbody>" });
+      var calibrated = player(it.model, id);
+      // an empty lane reads as a missing track: say in the lane that the model is silent here
+      if (!it.model.model.length)
+        calibrated.querySelector(".lanes").appendChild(el("span", { "class": "lane-note", text: nameOf(id) + " is silent in this excerpt" }));
       grid.appendChild(el("div", { "class": "card" }, [
         el("h3", { text: it.label + " reference" }),
-        el("p", { "class": "sub", text: "Speech-ratio percentile " + Math.round(100 * it.pct) + " of 568 held-out speakers · dose " + it.dose }),
-        el("div", { "class": "label", text: "Reference speaker · own conversation, 25 s of the 5-min recording" }),
+        el("p", { "class": "sub", text: "Speech-ratio percentile " + Math.round(100 * it.pct) + " of 568 held-out speakers" }),
+        clipHead("Reference speaker", "var(--ref)", "Their own conversation · 25\u00a0s of the 5\u2011min recording"),
         player(it.ref, "ref"),
-        // the output is on the target conversation, not the reference's; the rule keeps the two from reading as one segment
-        el("div", { "class": "label target", text: nameOf(id) + " · target conversation, calibrated to this reference" +
-          (it.model.model.length ? "" : " · no speech in this 25 s") }),
-        player(it.model, id),
+        // the output is the model on the target conversation, not the reference's; the rule keeps the two from reading as one segment
+        clipHead(nameOf(id) + ", calibrated", color(id), "Target conversation, same partner as No steering · dose\u00a0" + it.dose, true),
+        calibrated,
         el("div", { "class": "tables" }, [table])
       ]));
     });

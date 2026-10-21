@@ -223,8 +223,12 @@ h2 { margin: 0 0 14px; max-width: 900px; font-family: var(--serif); font-weight:
 .card { padding: 24px; min-width: 0; display: flex; flex-direction: column; }
 .card h3 { margin: 0 0 4px; font-family: var(--serif); font-weight: 700; font-size: 26px; color: #fff; }
 .card .sub { margin: 0 0 6px; font-family: var(--mono); font-size: 12px; letter-spacing: .06em; line-height: 1.6; color: var(--ink-3); }
-.label { margin: 18px 0 8px; font-size: 13px; font-weight: 500; line-height: 1.45; color: var(--ink-3); }
-.card .label.target { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); }
+/* clip heading in a transfer card: lane-color swatch + who speaks, then the clip's source */
+.clip-head { margin: 18px 0 10px; }
+.clip-head h4 { display: flex; align-items: center; gap: 10px; margin: 0; font-family: var(--serif); font-weight: 700; font-size: 18px; line-height: 1.3; color: #fff; }
+.clip-head h4 i { width: 14px; height: 8px; border-radius: 2px; flex: none; }
+.clip-head p { margin: 2px 0 0 24px; font-size: 13px; line-height: 1.45; color: var(--ink-3); }
+.card .clip-head.target { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); }
 
 table.desc { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 13.5px; margin: 18px 0 0; }
 table.desc col.n { width: 64px; }
@@ -253,6 +257,9 @@ table.desc thead th { border-top: none; padding-bottom: 6px; font-size: 11px; le
 .seg-user { fill: var(--user); }
 .playhead { stroke: var(--red); stroke-width: 2; filter: drop-shadow(0 0 4px var(--red)); }
 .lane-tag { font: 500 9px var(--mono); fill: var(--ink-3); }
+/* text inside an empty model lane (top 17px, height 15px, as drawn in the player svg) */
+.lane-note { position: absolute; left: 0; right: 0; top: 17px; height: 15px; display: flex; align-items: center; justify-content: center; font-size: 13px; line-height: 1; color: var(--ink-2); white-space: nowrap; pointer-events: none; }
+@media (max-width: 399px) { .lane-note { font-size: 12px; } }
 
 .rows { display: grid; gap: 0; padding: 6px 24px 10px; border-radius: 22px; border: 1px solid var(--rule); background: rgba(247, 247, 247, .03); }
 .row { display: grid; grid-template-columns: 1fr; gap: 8px; align-items: center; padding: 14px 0; border-top: 1px solid var(--rule); }
